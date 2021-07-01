@@ -75,15 +75,15 @@ function Sets() {
    * @author Austin Knauer
    * @author Vinson Chin
    */
-  let createdSetsSearch = async (e: any) => {
-    e.preventDefault();
-
-    let response = await createdSetSearch(headers);
-    dispatch(setSetList(response));
-
-    // needs to be updated eventually to actually check whether results were successfully fetched from the api
-    setShowList(true);
-  };
+  // let createdSetsSearch = async (e: any) => {
+  //   e.preventDefault();
+  //
+  //   let response = await createdSetSearch(headers);
+  //   dispatch(setSetList(response));
+  //
+  //   // needs to be updated eventually to actually check whether results were successfully fetched from the api
+  //   setShowList(true);
+  // };
 
   /**
    * Local flashcards are set here along with calls to persist study sets
@@ -166,7 +166,7 @@ function Sets() {
     console.log(currentChecked);
   };
 
-  let publicSetsSearch = async (e: any) => {};
+  // let publicSetsSearch = async (e: any) => {};
 
   // ANN: need to add another conditional render statement like with SetList below that renders
   // a form with an input for the study set name, a dropdown input with public/private options,
@@ -184,7 +184,7 @@ function Sets() {
           <Col md={10} className="mobile-semitransparent">
             <Form>
               <Form.Group>
-                <Form.Label>Set Name: </Form.Label>
+                <Form.Label id="lbl-set-name">Set Name: </Form.Label>
                 <Form.Control
                   id="setName"
                   name="setName"

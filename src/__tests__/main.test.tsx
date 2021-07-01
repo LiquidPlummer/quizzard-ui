@@ -16,6 +16,10 @@ const initialState = {
         username: "",
         token: "",
         showLogin: true,
+    },
+    error:{
+        errorMsg:"",
+        showError:false
     }
 };
 const initialState1 = {
@@ -25,6 +29,10 @@ const initialState1 = {
         username: "",
         token: "",
         showLogin: false,
+    },
+    error:{
+        errorMsg:"",
+        showError:false
     }
 };
 

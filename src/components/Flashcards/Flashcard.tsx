@@ -64,7 +64,7 @@ const FlashCard = () => {
     };
 
     console.log("Subject: " + cardObj.subjectId)
-    let test = await createCard(cardObj.question, cardObj.answer, cardObj.reviewable, cardObj.isPublic, cardObj.subjectId);
+    //let test = await createCard(cardObj.question, cardObj.answer, cardObj.reviewable, cardObj.isPublic, cardObj.subjectId);
     dispatch(addFlashcard(cardObj));
 
     setQuestion("");
@@ -95,16 +95,18 @@ const FlashCard = () => {
         <Col>
           <Form>
             <Form.Group>
-              <Form.Label>Question: </Form.Label>
+              <Form.Label id="lbl-question">Question: </Form.Label>
               <Form.Control
+                data-testid="question"
                 type="text"
                 id="card-question"
                 name="card-question"
                 value={question}
                 onChange={(e) => setQuestion(e.target.value)}
               ></Form.Control>
-              <Form.Label>Answer: </Form.Label>
-              <Form.Control 
+              <Form.Label id="lbl-answer">Answer: </Form.Label>
+              <Form.Control
+                data-testid="answer"
                 type="text"
                 id="card-answer"
                 name="card-answer"
@@ -112,8 +114,8 @@ const FlashCard = () => {
                 onChange={(e) => setAnswer(e.target.value)}
               ></Form.Control>
             </Form.Group>
-            <Form.Label>Subject: </Form.Label>
-              <Form.Control as="select" onChange={(e) => setSubjectId(e.target.value)}>
+            <Form.Label id="lbl-subject">Subject: </Form.Label>
+              <Form.Control data-testid="subject" as="select" onChange={(e) => setSubjectId(e.target.value)}>
               <option value="">Select a subject...</option>
               {subjects.subjects.map((subject) => {
               return (
@@ -122,6 +124,7 @@ const FlashCard = () => {
             })}
               </Form.Control>
             <Form.Check
+              data-testid="check-public"
               type="checkbox"
               label="Would you like to make this card public?"
               checked={isPublic}
