@@ -42,15 +42,15 @@ const Login = () => {
         <Form>
         <h2>Login</h2>
           <Form.Group>
-            <Form.Label>Username: </Form.Label>
+            <Form.Label id="lbl-username">Username: </Form.Label>
             <Form.Control name="username" value={loginUser.username} onChange={onChange} type="text" placeholder="username"  />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Password: </Form.Label>
+            <Form.Label id="lbl-password">Password: </Form.Label>
             <Form.Control name="password" value={loginUser.password} onChange={onChange} type="password" placeholder="*******"/>
           </Form.Group>
           <Form.Group className="text-center">
-            <Button onClick={logUserIn} type="submit" >Login</Button>
+            <Button data-testid="login-btn" onClick={logUserIn} type="submit" >Login</Button>
           </Form.Group>
         </Form>
       </>

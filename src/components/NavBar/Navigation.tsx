@@ -3,7 +3,7 @@
  */
 
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import {BrowserRouter, Link} from "react-router-dom";
 import {
   authState,
   logoutUserReducer,
@@ -49,6 +49,7 @@ const Navigation = () => {
             {!auth.isAuthenticated && (
               <>
                 <a
+                    id="login-btn"
                   className="text-light ml-2 mr-2 navLink authLink"
                   onClick={handleLogin}
                 >
@@ -56,6 +57,7 @@ const Navigation = () => {
                 </a>
 
                 <a
+                    id="register-btn"
                   className="text-light ml-2 mr-2 navLink authLink"
                   onClick={handleRegister}
                 >
@@ -64,7 +66,7 @@ const Navigation = () => {
               </>
             )}
             {auth.isAuthenticated && (
-              <>
+              <BrowserRouter>
                 <Link className="text-light ml-2 mr-2 navLink" to="/study">
                   Study
                 </Link>
@@ -73,7 +75,7 @@ const Navigation = () => {
                   Update
                 </Link>
 
-                <Link id="" className="text-light ml-2 mr-2 navLink" to="/sets">
+                <Link className="text-light ml-2 mr-2 navLink" to="/sets">
                   Create
                 </Link>
 
@@ -85,7 +87,7 @@ const Navigation = () => {
                 >
                   Logout
                 </Link>
-              </>
+              </BrowserRouter>
             )}
           </Nav>
         </Navbar.Collapse>

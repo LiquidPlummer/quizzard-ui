@@ -39,27 +39,27 @@ const Register = () => {
       <Form className="auth-form">
         <h2>Registration</h2>
         <Form.Group>
-          <Form.Label>Username: </Form.Label>
+          <Form.Label id="lbl-username">Username: </Form.Label>
           <Form.Control name="username" value={newUser.username} onChange={handleChange} type="text" placeholder="username"  />
         </Form.Group>
-        <Form.Group>
-          <Form.Label>Password: </Form.Label>
+        <Form.Group >
+          <Form.Label id="lbl-password">Password: </Form.Label>
           <Form.Control name="password" value={newUser.password} onChange={handleChange} type="password" placeholder="*******"/>
         </Form.Group>
         <Form.Group>
-          <Form.Label>Email: </Form.Label>
+          <Form.Label id="lbl-email">Email: </Form.Label>
           <Form.Control name="email" value={newUser.email} onChange={handleChange} type="text" placeholder="email@email.com"  />
         </Form.Group>
         <Form.Group>
-          <Form.Label>First Name: </Form.Label>
+          <Form.Label id="lbl-first-name">First Name: </Form.Label>
           <Form.Control name="firstName" value={newUser.firstName} onChange={handleChange} type="text" placeholder="John"  />
         </Form.Group>
         <Form.Group>
-          <Form.Label>Last Name: </Form.Label>
+          <Form.Label id="lbl-last-name">Last Name: </Form.Label>
           <Form.Control name="lastName" value={newUser.lastName} onChange={handleChange} type="text" placeholder="Bond"  />
         </Form.Group>
         <Form.Group className="text-center">
-          <Button onClick={registerNewUser} type = "submit">Register</Button>
+          <Button  onClick={registerNewUser} type = "submit">Register</Button>
         </Form.Group>
       </Form>
     </>

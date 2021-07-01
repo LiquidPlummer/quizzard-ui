@@ -32,7 +32,7 @@ const CreateQuiz = () => {
             <Quiz />
           ) : (
               <>
-                <Button type="submit" onClick={goToQuiz} >Start!</Button>
+                <Button id="start-btn" type="submit" onClick={goToQuiz}>Start!</Button>
               </>
           )}
         </Col>

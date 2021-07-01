@@ -130,6 +130,7 @@ const StudyHub = () => {
             style={{ alignContent: "center" }}
           >
             <Button
+                id="owned-set-btn"
               type="submit"
               style={{ padding: "5px", width: "100px", margin: "10px" }}
               onClick={ownedSetMode}
@@ -137,6 +138,7 @@ const StudyHub = () => {
               Your Sets
             </Button>
             <Button
+                id="public-set-btn"
               type="submit"
               style={{ padding: "5px", width: "100px", margin: "10px" }}
               onClick={publicSetMode}
@@ -144,6 +146,7 @@ const StudyHub = () => {
               Public Sets
             </Button>
             <Button
+                id="create-set-btn"
               type="submit"
               style={{ padding: "5px", width: "100px", margin: "10px" }}
               onClick={createSet}

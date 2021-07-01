@@ -37,7 +37,7 @@ describe("UpdateAccountInfo Component",()=>{
     let wrapper:ReactWrapper;
     
     beforeEach(()=>{
-        wrapper = mount(<Provider store={configureMS(initialState)}><UpdateAccountInfo></UpdateAccountInfo></Provider>);
+        wrapper = mount(<Provider store={configureMS(initialState)}><UpdateAccountInfo/></Provider>);
     })
 
     test("Shallow Render",()=>{
@@ -165,14 +165,6 @@ describe("UpdateAccountInfo Component",()=>{
         })
 
         const spy = jest.spyOn(Storage.prototype, 'getItem');
-        // localStorage.setItem = jest.fn();
-
-// // works:
-//         jest.spyOn(window.localStorage.__proto__, 'getItem');
-//         window.localStorage.__proto__.setItem = jest.fn();
-
-// assertions as usual:
-
 
         const recieve = await updateAccInfo(mockNewUpdateAccountInfoObject, header);
         expect(updateAccInfo).toHaveBeenCalled();
@@ -187,3 +179,46 @@ describe("UpdateAccountInfo Component",()=>{
     })
     
 });
+
+
+
+// let DtoFromApi:UpdateAccModel={
+//     username:"shadow",
+//     password:"Password Updated",
+//     email:"test-shadow@gmail.com"
+// };
+//
+// const mockNewUpdateAccountInfoObject:UpdateAccModel = {
+//     username:"shadow",
+//     password:"Rise123!",
+//     email:"test-shadow@gmail.com"
+// };
+// const header = {
+//     'Content-Type': 'application/json',
+//     'Authorization': localStorage.getItem("Authorization")
+// };
+// jest.mock("../remote/update-info-service",()=>{
+//     return{
+//         updateAccInfo:jest.fn()
+//     }
+// });
+// describe("Update Component with Mock Axios", ()=>{
+//     test("Button Click Simulation",async()=>{
+//         const { queryByTestId} = render(<Provider store={configureMS(initialState)}>
+//             <UpdateAccountInfo />
+//         </Provider>);
+//
+//         (updateAccInfo as jest.Mock ).mockImplementation((newInformationModel:UpdateAccModel,headers:any)=>{
+//             return new Promise(resolve => resolve(DtoFromApi))
+//         })
+//
+//         await act(async ()=>{
+//             const buttonMock = queryByTestId("submit-btn");
+//             fireEvent.click(buttonMock);
+//         })
+//
+//         const received = await updateAccInfo(mockNewUpdateAccountInfoObject, header);
+//         expect(updateAccInfo).toHaveBeenCalled();
+//         expect(received).toEqual(DtoFromApi);
+//     })
+// })
