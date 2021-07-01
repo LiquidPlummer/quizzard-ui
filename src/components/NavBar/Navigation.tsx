@@ -2,8 +2,9 @@
  * @Co-Author: Sean Taba
  */
 
-import { Navbar, Container, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import {Navbar, Container, Nav } from "react-bootstrap";
+import {  NavLink } from "react-router-dom";
+
 import {
   authState,
   logoutUserReducer,
@@ -49,6 +50,7 @@ const Navigation = () => {
             {!auth.isAuthenticated && (
               <>
                 <a
+                    id="login-btn"
                   className="text-light ml-2 mr-2 navLink authLink"
                   onClick={handleLogin}
                 >
@@ -56,6 +58,7 @@ const Navigation = () => {
                 </a>
 
                 <a
+                    id="register-btn"
                   className="text-light ml-2 mr-2 navLink authLink"
                   onClick={handleRegister}
                 >
@@ -65,26 +68,26 @@ const Navigation = () => {
             )}
             {auth.isAuthenticated && (
               <>
-                <Link className="text-light ml-2 mr-2 navLink" to="/study">
+                <NavLink id="study" className="text-light ml-2 mr-2 navLink" to="/study">
                   Study
-                </Link>
+                </NavLink>
 
-                <Link className="text-light ml-2 mr-2 navLink" to="/update">
+                <NavLink id="update" className="text-light ml-2 mr-2 navLink" to="/update">
                   Update
-                </Link>
+                </NavLink>
 
-                <Link id="" className="text-light ml-2 mr-2 navLink" to="/sets">
+                <NavLink id="create" className="text-light ml-2 mr-2 navLink" to="/sets">
                   Create
-                </Link>
+                </NavLink>
 
-                <Link
+                <NavLink
                   id="logout"
                   className="text-light ml-2 mr-2 navLink authLink"
                   onClick={handleLogout}
                   to="/"
                 >
                   Logout
-                </Link>
+                </NavLink>
               </>
             )}
           </Nav>
